@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const navItems = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -28,19 +29,19 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
-          <img src="/src/assets/react.svg" alt="Logo" className="h-8 w-8 animate-spin-slow" />
+          <img src="/src/assets/sankit-avatar.png" alt="Logo" className="h-16 w-16 animate-spin-slow" />
         </div>
         {/* Nav Items (center) */}
         <div className="hidden md:flex flex-1 justify-center space-x-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.href}
               className="relative text-gray-700 dark:text-gray-200 font-medium px-2 py-1 transition-colors duration-200 hover:text-blue-500 dark:hover:text-blue-400 group"
             >
               {item.name}
               <span className="block h-0.5 w-0 bg-blue-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
-            </a>
+            </Link>
           ))}
         </div>
         {/* Right Side: Theme Toggle & Hamburger */}
@@ -76,7 +77,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
-          <img src="/src/assets/react.svg" alt="Logo" className="h-8 w-8 animate-spin-slow" />
+          <img src="/src/assets/sankit-avatar.png" alt="Logo" className="h-16 w-16 animate-spin-slow" />
           <button
             className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={() => setSidebarOpen(false)}
@@ -87,14 +88,14 @@ export default function Navbar() {
         </div>
         <nav className="flex flex-col mt-4 space-y-2 px-4">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.href}
               className="text-gray-700 dark:text-gray-200 font-medium px-2 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               onClick={() => setSidebarOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="mt-auto px-4 py-4">
