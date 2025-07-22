@@ -2,3 +2,15 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-primary: green;
+  --color-primary-cst: red;
+  --color-custom-color: blue;
+}
+
+.dark {
+  --color-primary: #a9ff20;
+  --color-primary-cst: #fbbf24;
+  --color-custom-color: #38bdf8;
+}
+
