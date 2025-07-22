@@ -8,10 +8,14 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const stored = localStorage.getItem('darkMode');
+    return stored ? JSON.parse(stored) : false;
+  });
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   React.useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
