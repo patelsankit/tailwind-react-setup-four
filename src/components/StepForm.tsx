@@ -3,11 +3,15 @@ import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 import StepFormDynamic from "./StepFormDynamic";
+import UseEffectExample from "./UseEffectExample";
 
 const StepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  console.log("🚀 ~ StepForm ~ currentStep:", currentStep);
+
   return (
     <>
+      <UseEffectExample />
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="flex items-center justify-center gap-2">
           {currentStep > 1 && (

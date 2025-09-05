@@ -13,7 +13,9 @@ function Panel({ title, children }) {
       {isActive ? (
         <p>{children}</p>
       ) : (
-        <button onClick={() => setIsActive(true)}>Show</button>
+        <button className="p-2 bg-red-800" onClick={() => setIsActive(true)}>
+          Show
+        </button>
       )}
     </section>
   );
@@ -21,7 +23,7 @@ function Panel({ title, children }) {
 const About = () => {
   return (
     <div className="p-8 max-w-2xl mx-auto">
-      <Accordion
+      {/* <Accordion
         type="single"
         collapsible
         className="w-full"
@@ -70,12 +72,16 @@ const About = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
+      </Accordion> */}
       {/* Notice how pressing one panel’s button does not affect the other panel—they are independent. */}
 
       {/* lifting state up */}
       <h2>Almaty, Kazakhstan</h2>
       <Panel title="About">
+        With a population of about 2 million, Almaty is Kazakhstan's largest
+        city. From 1929 to 1997, it was its capital city.
+      </Panel>
+      <Panel title="third">
         With a population of about 2 million, Almaty is Kazakhstan's largest
         city. From 1929 to 1997, it was its capital city.
       </Panel>
