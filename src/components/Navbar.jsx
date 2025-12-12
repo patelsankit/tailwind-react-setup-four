@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <div className="flex items-center flex-shrink-0">
           <img
-            src="/src/assets/sankit-avatar.png"
+            src="/sankit-avatar.png"
             alt="Logo"
             className="h-16 w-16 animate-spin-slow"
           />
@@ -129,7 +129,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
           <img
-            src="/src/assets/sankit-avatar.png"
+            src="/sankit-avatar.png"
             alt="Logo"
             className="h-16 w-16 animate-spin-slow"
           />
