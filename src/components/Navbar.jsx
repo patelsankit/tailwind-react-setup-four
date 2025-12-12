@@ -15,7 +15,7 @@ const navItems = [
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(() => {
     const stored = localStorage.getItem("darkMode");
-    return stored ? JSON.parse(stored) : false;
+    return stored ? JSON.parse(stored) : true;
   });
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
