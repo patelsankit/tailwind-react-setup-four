@@ -6,6 +6,10 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import StepForm from "./components/StepForm";
+import AuthLayout from "./layouts/AuthLayout";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function Home() {
   return (
@@ -27,13 +31,60 @@ function Home() {
 export default function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/step-form" element={<StepForm />} />
+        {/* Routes with Navbar */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Home />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Navbar />
+              <About />
+            </>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <>
+              <Navbar />
+              <Services />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Navbar />
+              <Contact />
+            </>
+          }
+        />
+        <Route
+          path="/step-form"
+          element={
+            <>
+              <Navbar />
+              <StepForm />
+            </>
+          }
+        />
+
+        {/* Auth Routes with AuthLayout (no Navbar) */}
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+        </Route>
       </Routes>
     </Router>
   );

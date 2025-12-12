@@ -7,6 +7,9 @@ const navItems = [
   { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
   { name: "stepForm", href: "/step-form" },
+  { name: "Login", href: "/auth/login" },
+  { name: "Register", href: "/auth/register" },
+  { name: "Forgot Password", href: "/auth/forgot-password" },
 ];
 
 export default function Navbar() {
